@@ -8,7 +8,7 @@
     </property>
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="OptSim-2019.09-build_1">
     </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1613, 853]">
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1613, 851]">
     </property>
     <property name="OptSim Director" class="com.rsoftdesign.simworks.link.OptSimDirector">
         <property name="Scheduler" class="ptolemy.domains.sdf.kernel.SDFScheduler">
@@ -104,7 +104,7 @@
     </property>
     <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="1.29407204106">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{862.0335134681749, 432.3528530003835}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{853.9999999999998, 405.0166623729868}">
     </property>
     <entity name="fiber1" class="optsim.Fiber.fiber">
         <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
@@ -322,7 +322,7 @@
         <property name="sync_type" class="ptolemy.data.expr.Parameter" value="&quot;Pulse&quot;">
         </property>
         <doc name="pnseqDesc">Datasource</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="320.0, 320.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="440.0, 320.0">
         </property>
         <port name="Out" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="output"/>
@@ -348,7 +348,7 @@
         <property name="cross_point" class="ptolemy.data.expr.Parameter" value="50.0">
         </property>
         <doc name="recnrzDesc">Driver NRZ</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="480.0, 320.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="520.0, 320.0">
         </property>
         <port name="In" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -447,7 +447,7 @@
         <property name="relax_peak_ov" class="ptolemy.data.expr.Parameter" value="7.0">
         </property>
         <doc name="laslorDesc">Lorentzian Laser</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="640.0, 480.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="600.0, 400.0">
         </property>
         <port name="OptOut_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="output"/>
@@ -524,7 +524,7 @@
             <configure>618176</configure>
         </property>
         <doc name="SUBDesc">SUB</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="1159.0, 359.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1119.0, 319.0">
         </property>
         <port name="Ein1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -556,7 +556,7 @@
         <property name="plot" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
         </property>
         <doc name="filchbDesc">Electrical Filter: Chebychev</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="920.0, 440.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="916.5, 390.625">
         </property>
         <port name="EleIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -589,7 +589,7 @@
         <property name="dark_current" class="ptolemy.data.expr.Parameter" value="0.1">
         </property>
         <doc name="photod_pinDesc">PIN Photodiode</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="840.0, 440.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="836.5, 390.625">
         </property>
         <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -632,13 +632,23 @@
         <property name="fixed_th_value" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
         <doc name="pestimDesc">BER Estimator</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="1280.0, 360.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1200.0, 320.0">
         </property>
         <port name="EleIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
         </port>
     </entity>
     <entity name="CCM1" class="user1_channel1">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
+        </property>
         <property name="console_mode" class="ptolemy.data.expr.Parameter" value="false">
         </property>
         <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
@@ -647,7 +657,7 @@
         <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
             <configure>618194</configure>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="840.0, 200.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="840.0, 240.0">
         </property>
     </entity>
     <entity name="filchb4" class="optsim.Electrical_Filters.filchb">
@@ -669,7 +679,7 @@
         <property name="plot" class="ptolemy.data.expr.Parameter" value="&quot;No&quot;">
         </property>
         <doc name="filchbDesc">Electrical Filter: Chebychev</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="1000.5, 200.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1000.5, 240.0">
         </property>
         <port name="EleIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -702,7 +712,7 @@
         <property name="dark_current" class="ptolemy.data.expr.Parameter" value="0.1">
         </property>
         <doc name="photod_pinDesc">PIN Photodiode</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="920.5, 200.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="920.5, 240.0">
         </property>
         <port name="OptIn_1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -711,6 +721,18 @@
             <property name="output"/>
             <property name="multiport"/>
         </port>
+    </entity>
+    <entity name="CCM2" class="user1_rxDSP">
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>618364</configure>
+        </property>
+        <property name="console_mode" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1160.0, 240.0">
+        </property>
+        <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>user1_rxDSP.obs</configure>
+        </property>
     </entity>
     <relation name="link1" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
@@ -761,13 +783,6 @@
             <configure>618219</configure>
         </property>
     </relation>
-    <relation name="link9" class="ptolemy.actor.TypedIORelation">
-        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
-        </property>
-        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-            <configure>618220</configure>
-        </property>
-    </relation>
     <relation name="link10" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
@@ -797,21 +812,38 @@
         <property name="_location" class="ptolemy.kernel.util.Location">
         </property>
         <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-            <configure>618225</configure>
+            <configure>618224</configure>
         </property>
     </relation>
-    <relation name="link16" class="ptolemy.actor.TypedIORelation">
+    <relation name="link6" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>618226</configure>
+        </property>
+    </relation>
+    <relation name="link12" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
         <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
             <configure>618227</configure>
         </property>
     </relation>
-    <relation name="link6" class="ptolemy.actor.TypedIORelation">
+    <relation name="link9" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>618359</configure>
+        </property>
     </relation>
-    <relation name="link12" class="ptolemy.actor.TypedIORelation">
+    <relation name="link15" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>618360</configure>
+        </property>
+    </relation>
+    <relation name="link16" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
@@ -832,8 +864,8 @@
     <link port="loamod1.OptOut_1" relation="link6"/>
     <link port="photod_pin1.OptIn_1" relation="link7"/>
     <link port="photod_pin1.EleOut_1" relation="link8"/>
-    <link port="SUB1.Ein1" relation="link9"/>
-    <link port="SUB1.Ein2" relation="link16"/>
+    <link port="SUB1.Ein1" relation="link15"/>
+    <link port="SUB1.Ein2" relation="link9"/>
     <link port="SUB1.Eout1" relation="link13"/>
     <link port="filchb3.EleIn_1" relation="link10"/>
     <link port="photod_pin2.OptIn_1" relation="link11"/>
@@ -842,7 +874,9 @@
     <link port="CCM1.inOp" relation="link6"/>
     <link port="CCM1.outOp" relation="link12"/>
     <link port="filchb4.EleIn_1" relation="link14"/>
+    <link port="filchb4.EleOut_1" relation="link15"/>
     <link port="filchb4.EleOut_1" relation="link16"/>
     <link port="photod_pin3.OptIn_1" relation="link12"/>
     <link port="photod_pin3.EleOut_1" relation="link14"/>
+    <link port="CCM2.inElec" relation="link16"/>
 </entity>

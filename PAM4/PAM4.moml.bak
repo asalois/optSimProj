@@ -8,7 +8,7 @@
     </property>
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="OptSim-2019.09-build_1">
     </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[2253, 851]">
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1613, 853]">
     </property>
     <property name="OptSim Director" class="com.rsoftdesign.simworks.link.OptSimDirector">
         <property name="Scheduler" class="ptolemy.domains.sdf.kernel.SDFScheduler">
@@ -102,9 +102,9 @@
     </property>
     <property name="_vergilGridSize" class="ptolemy.kernel.util.StringAttribute" value="40">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="2.2527174334403">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="1.29407204106">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{798.0627168226872, 356.0079880231277}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{862.0335134681749, 432.3528530003835}">
     </property>
     <entity name="fiber1" class="optsim.Fiber.fiber">
         <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
@@ -639,16 +639,6 @@
         </port>
     </entity>
     <entity name="CCM1" class="user1_channel1">
-        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
-        </property>
-        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
-        </property>
-        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
-        </property>
-        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
-        </property>
-        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
-        </property>
         <property name="console_mode" class="ptolemy.data.expr.Parameter" value="false">
         </property>
         <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
@@ -801,13 +791,6 @@
             <configure>618223</configure>
         </property>
     </relation>
-    <relation name="link6" class="ptolemy.actor.TypedIORelation">
-        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
-        </property>
-        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-            <configure>618224</configure>
-        </property>
-    </relation>
     <relation name="link14" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
@@ -817,18 +800,19 @@
             <configure>618225</configure>
         </property>
     </relation>
-    <relation name="link15" class="ptolemy.actor.TypedIORelation">
-        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
-        </property>
-        <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-            <configure>618226</configure>
-        </property>
-    </relation>
     <relation name="link16" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
         <property name="_vergil_ID" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
             <configure>618227</configure>
+        </property>
+    </relation>
+    <relation name="link6" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link12" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
     <link port="fiber1.OptIn_1" relation="link5"/>
@@ -856,9 +840,9 @@
     <link port="photod_pin2.EleOut_1" relation="link10"/>
     <link port="pestim1.EleIn_1" relation="link13"/>
     <link port="CCM1.inOp" relation="link6"/>
-    <link port="CCM1.outOp" relation="link15"/>
+    <link port="CCM1.outOp" relation="link12"/>
     <link port="filchb4.EleIn_1" relation="link14"/>
     <link port="filchb4.EleOut_1" relation="link16"/>
-    <link port="photod_pin3.OptIn_1" relation="link15"/>
+    <link port="photod_pin3.OptIn_1" relation="link12"/>
     <link port="photod_pin3.EleOut_1" relation="link14"/>
 </entity>
