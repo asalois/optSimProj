@@ -1,7 +1,7 @@
 txPAM
 MODELNAME txPAM
 ICONFILE matcosim.bmp
-DLLFILE matcosimR2019a.dll
+DLLFILE matcosim.dll
 ENTRYNAMEROOT matcosim
 FUNCTIONCODES E
 MODELABBREV txPAM
@@ -26,7 +26,7 @@ ENDPARAM
 
 PARAM MfilePath StringType
 GROUP General
-VALUE 4
+VALUE .
 ENDPARAM
 
 PARAM SaveMatlabWorkspace EnumType

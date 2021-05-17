@@ -1,12 +1,12 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
     "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
-<entity name="pamm4_smf" class="ptolemy.actor.TypedCompositeActor">
+<entity name="pamSMF" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="OptSim-2019.09-build_1">
+    </property>
     <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
     </property>
     <property name="Director Type" class="ptolemy.data.expr.Parameter" value="&quot;LinkSIM&quot;">
-    </property>
-    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="OptSim-2019.09-build_1">
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1613, 843]">
     </property>
@@ -73,12 +73,14 @@
         </property>
         <property name="Simulation Accuracy" class="ptolemy.data.expr.Parameter" value="&quot;Standard&quot;">
         </property>
-        <property name="Tolerance" class="ptolemy.data.expr.Parameter" value="0.001">
+        <property name="Tolerance" class="ptolemy.data.expr.Parameter" value="1.0E-3">
         </property>
         <property name="Verbosity Level" class="ptolemy.data.expr.Parameter" value="0">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="70.0, 35.0">
         </property>
+    </property>
+    <property name="_vergilGridSize" class="ptolemy.kernel.util.StringAttribute" value="40">
     </property>
     <property name="bitRate" class="ptolemy.data.expr.Parameter" value="1.0E10">
     </property>
@@ -94,44 +96,10 @@
     </property>
     <property name="timeSpan" class="ptolemy.data.expr.Parameter" value="timeStep * 2^noSamples">
     </property>
-    <property name="_vergilGridSize" class="ptolemy.kernel.util.StringAttribute" value="40">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="2.325045045045">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="3.2197530864198">
+    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{597.2379882207067, 581.3970377402356}">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{696.8289110429448, 447.7841449386502}">
-    </property>
-    <property name="paternLength" class="ptolemy.data.expr.Parameter">
-    </property>
-    <entity name="SigPlt3" class="linksim.src.stars.SignalAnalyzer">
-        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
-        </property>
-        <property name="FilenameRoot" class="ptolemy.data.expr.Parameter" value="&quot;&quot;">
-        </property>
-        <property name="Sig_Representation" class="ptolemy.data.expr.Parameter" value="&quot;Default&quot;">
-        </property>
-        <property name="Polarization" class="ptolemy.data.expr.Parameter" value="&quot;comb_x_and_y&quot;">
-        </property>
-        <property name="ShowNoise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
-        </property>
-        <property name="Toffset" class="ptolemy.data.expr.Parameter" value="0.0">
-        </property>
-        <property name="PowerThreshold" class="ptolemy.data.expr.Parameter" value="0.0">
-        </property>
-        <property name="PowerUnits" class="ptolemy.data.expr.Parameter" value="&quot;Watt&quot;">
-        </property>
-        <property name="seed" class="ptolemy.data.expr.Parameter" value="0">
-        </property>
-        <property name="Plot" class="ptolemy.data.expr.Parameter" value="&quot;Save&quot;">
-        </property>
-        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
-        </property>
-        <doc name="SignalAnalyzerDesc">Signal Analyzer</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="800.0, 400.0">
-        </property>
-        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
-            <property name="input"/>
-        </port>
-    </entity>
     <entity name="txPAM1" class="txPAM">
         <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
         </property>
@@ -191,13 +159,43 @@
         </property>
         <property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="4">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="640.0, 440.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="360.0, 520.0">
         </property>
+    </entity>
+    <entity name="SigPlt1" class="linksim.src.stars.SignalAnalyzer">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <doc name="SignalAnalyzerDesc">Signal Analyzer</doc>
+        <property name="FilenameRoot" class="ptolemy.data.expr.Parameter" value="&quot;&quot;">
+        </property>
+        <property name="Sig_Representation" class="ptolemy.data.expr.Parameter" value="&quot;Default&quot;">
+        </property>
+        <property name="Polarization" class="ptolemy.data.expr.Parameter" value="&quot;comb_x_and_y&quot;">
+        </property>
+        <property name="ShowNoise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="Toffset" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerThreshold" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerUnits" class="ptolemy.data.expr.Parameter" value="&quot;Watt&quot;">
+        </property>
+        <property name="seed" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Plot" class="ptolemy.data.expr.Parameter" value="&quot;Save&quot;">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="760.0, 520.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
     </entity>
     <relation name="link1" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
-    <link port="SigPlt3.input#1" relation="link1"/>
     <link port="txPAM1.output#1" relation="link1"/>
+    <link port="SigPlt1.input#1" relation="link1"/>
 </entity>
