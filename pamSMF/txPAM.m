@@ -1,4 +1,4 @@
-%% PAM Co-Sim
+%% PAM Co-Sim TX
 
 % Montana State University
 % Electrical & Computer Engineering Department
@@ -21,4 +21,5 @@ OutNode{1}.Signal.signalType = 2;
 OutNode{1}.Signal.noiseRep = noiseRepEnum.Undefined;
 OutNode{1}.Signal.patternLength = 2^patternLength;
 
-save txPAM
+% saveName = sprintf('txPam_%04d',runNum);
+% save(saveName)

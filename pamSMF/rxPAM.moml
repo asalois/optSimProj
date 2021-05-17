@@ -2,17 +2,17 @@
 <!DOCTYPE class PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
 <group>
-<class name="txPAM" extends="block_mode.usermodels.moml.MatlabCosimulationBase">
-<property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute" value="txPAM.dta"/>
+<class name="rxPAM" extends="block_mode.usermodels.moml.MatlabCosimulationBase">
+<property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute" value="rxPAM.dta"/>
 <property name="dllName" value="&quot;matcosim.dll&quot;"/>
 <property name="entryNameRoot" value="&quot;matcosim&quot;"/>
-<property name="componentType" value="&quot;txPAM&quot;"/>
+<property name="componentType" value="&quot;rxPAM&quot;"/>
 <property name="_vergilIconFile" class="ptolemy.kernel.util.StringAttribute" value="matcosim.bmp"/>
-<property name="_vergilToolTipText" class="ptolemy.kernel.util.StringAttribute" value="Make a PAM signal"/>
-<doc name="modelDesc">Make a PAM signal</doc>
+<property name="_vergilToolTipText" class="ptolemy.kernel.util.StringAttribute" value="Rx a PAM signal"/>
+<doc name="modelDesc">Rx a PAM signal</doc>
 <property name="_vergilFunctionCodes" class="ptolemy.kernel.util.StringAttribute" value="E"/>
-<property name="_vergilDisplayName" class="ptolemy.kernel.util.StringAttribute" value="txPAM"/>
-<property name="MfileName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;txPAM&quot;">
+<property name="_vergilDisplayName" class="ptolemy.kernel.util.StringAttribute" value="rxPAM"/>
+<property name="MfileName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;rxPAM&quot;">
 <property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
 </property>
 <property name="MfilePath" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;.&quot;">
@@ -47,13 +47,13 @@
 <property name="runNum" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
 <property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="1,4096,,General,false,false"/>
 </property>
-<property name="number_input_ports" value="0">
+<property name="number_input_ports" value="2">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="0,2,,Ports"/>
+</property>
+<property name="number_output_ports" value="0">
 <property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="0,1,,Ports"/>
 </property>
-<property name="number_output_ports" value="1">
-<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="1,1,,Ports"/>
-</property>
-<property name="_input_types_" value="[5]"/>
-<property name="_output_types_" value="[1]"/>
+<property name="_input_types_" value="[1]"/>
+<property name="_output_types_" value="[5]"/>
 </class>
 </group>
