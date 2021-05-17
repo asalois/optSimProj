@@ -1,2 +1,0 @@
-Starting Simulation: 5/12/21 1:16 PM
-Simulating component 'txPAM1' of type 'txPAM'
