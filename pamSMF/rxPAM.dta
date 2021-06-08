@@ -52,6 +52,12 @@ VALUE 1.e-12
 UNITS s
 ENDPARAM
 
+PARAM OSNR DoubleType
+GROUP General
+VALUE 15
+UNITS dB
+ENDPARAM
+
 PARAM bitRate DoubleType
 GROUP General
 VALUE 1.e9
