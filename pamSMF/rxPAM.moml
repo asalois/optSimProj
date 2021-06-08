@@ -32,6 +32,9 @@
 <property name="timeStep" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="1.e-12">
 <property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,s,General,false,false"/>
 </property>
+<property name="OSNR" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="15">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,dB,General,false,false"/>
+</property>
 <property name="bitRate" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="1.e9">
 <property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,bps,General,false,false"/>
 </property>
