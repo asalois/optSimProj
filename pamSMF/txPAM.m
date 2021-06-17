@@ -4,10 +4,11 @@
 % Electrical & Computer Engineering Department
 % Created by Alexander Salois
 
-nb = 2^patternLength;
+nb = floor((2^patternLength)/log2(M));
 msg = randi([0 M-1],1,nb);
 tx = pammod(msg,M);
-tx = rectpulse(tx,2^pointsPerBit);
+tx = rectpulse(tx,(2^pointsPerBit)*log2(M));
+tx = tx/(2*max(tx))+ 1/2;
 
 noPoints = 2^noSamples;
 OutNode{1}.noSignals = 1;
