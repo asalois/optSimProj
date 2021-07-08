@@ -37,7 +37,7 @@
         </property>
         <property name="Inner Starting Value" class="ptolemy.data.expr.Parameter" value="1">
         </property>
-        <property name="Inner Ending Value" class="ptolemy.data.expr.Parameter" value="10">
+        <property name="Inner Ending Value" class="ptolemy.data.expr.Parameter" value="20">
         </property>
         <property name="Inner increment" class="ptolemy.data.expr.Parameter" value="1">
         </property>
@@ -84,7 +84,7 @@
     </property>
     <property name="pointsPerBit" class="ptolemy.data.expr.Parameter" value="3">
     </property>
-    <property name="patternLength" class="ptolemy.data.expr.Parameter" value="15">
+    <property name="patternLength" class="ptolemy.data.expr.Parameter" value="18">
     </property>
     <property name="bandwidth" class="ptolemy.data.expr.Parameter" value="bitRate * 2^pointsPerBit">
     </property>
@@ -94,13 +94,13 @@
     </property>
     <property name="timeSpan" class="ptolemy.data.expr.Parameter" value="timeStep * 2^noSamples">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="1.8763358778626">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="2.2929104477612">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{459.5593978844589, 452.8778478437754}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{440.0, 462.6007933279089}">
     </property>
     <property name="runNum" class="ptolemy.data.expr.Parameter" value="1">
     </property>
-    <property name="OSNR" class="ptolemy.data.expr.Parameter" value="99">
+    <property name="OSNR" class="ptolemy.data.expr.Parameter" value="97">
         <doc name="desc">oSNR in dB</doc>
         <property name="_vergilDescEdited" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
@@ -497,7 +497,7 @@
         <property name="test_display" class="ptolemy.data.expr.Parameter" value="&quot;norm_phase&quot;">
         </property>
         <doc name="SpatialPhotodetectorDesc">Spatial Photodetector</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="560.0, 360.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="480.0, 360.0">
         </property>
         <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -550,7 +550,7 @@
         </property>
         <property name="launch_file_Y" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
         </property>
-        <property name="delta_z" class="ptolemy.data.expr.Parameter" value="1.0E-3">
+        <property name="delta_z" class="ptolemy.data.expr.Parameter" value="0.1">
         </property>
         <property name="coupling_coeff_model" class="ptolemy.data.expr.Parameter" value="&quot;constant&quot;">
         </property>
@@ -585,7 +585,7 @@
         <property name="output_type" class="ptolemy.data.expr.Parameter" value="&quot;mode_coupling_plot&quot;">
         </property>
         <doc name="LargeCoreStepIndexFiberDesc">Large-Core Step-Index Fiber</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="480.0, 360.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="400.0, 360.0">
         </property>
         <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
             <property name="input"/>
@@ -663,44 +663,6 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="680.0, 440.0">
         </property>
     </entity>
-    <entity name="NoiseAdder1" class="linksim.src.stars.NoiseAdder">
-        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
-        </property>
-        <doc name="NoiseAdderDesc">Optical Noise Adder</doc>
-        <property name="noiseNormalization" class="ptolemy.data.expr.Parameter" value="&quot;SNR&quot;">
-        </property>
-        <property name="noiseShape" class="ptolemy.data.expr.Parameter" value="&quot;Uniform&quot;">
-        </property>
-        <property name="noiseFilename" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
-        </property>
-        <property name="noisePeak" class="ptolemy.data.expr.Parameter" value="1.0E-15">
-        </property>
-        <property name="noiseSNR" class="ptolemy.data.expr.Parameter" value="OSNR">
-        </property>
-        <property name="noiseSNR_BW" class="ptolemy.data.expr.Parameter" value="5.0E10">
-        </property>
-        <property name="noiseCenter" class="ptolemy.data.expr.Parameter" value="1.55E-6">
-        </property>
-        <property name="noiseBW" class="ptolemy.data.expr.Parameter" value="3.0E-8">
-        </property>
-        <property name="noiseResolution" class="ptolemy.data.expr.Parameter" value="1.0E-11">
-        </property>
-        <property name="noiseRepn" class="ptolemy.data.expr.Parameter" value="&quot;InNoiseBins&quot;">
-        </property>
-        <property name="noiseSeed" class="ptolemy.data.expr.Parameter" value="0">
-        </property>
-        <property name="activeBins" class="ptolemy.data.expr.Parameter" value="-10">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="400.0, 360.0">
-        </property>
-        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
-            <property name="input"/>
-        </port>
-        <port name="output" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
-            <property name="output"/>
-            <property name="multiport"/>
-        </port>
-    </entity>
     <relation name="link13" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
@@ -713,11 +675,7 @@
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
-    <relation name="link7" class="ptolemy.actor.TypedIORelation">
-        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
-        </property>
-    </relation>
-    <relation name="link10" class="ptolemy.actor.TypedIORelation">
+    <relation name="link8" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
@@ -728,13 +686,11 @@
     <link port="txPAM1.output#1" relation="link13"/>
     <link port="txPAM1.output#1" relation="link6"/>
     <link port="SpDMLaser1.input#1" relation="link13"/>
-    <link port="SpDMLaser1.output#1" relation="link10"/>
+    <link port="SpDMLaser1.output#1" relation="link8"/>
     <link port="SpPhotoDet1.input#1" relation="link5"/>
-    <link port="SpPhotoDet1.output" relation="link7"/>
-    <link port="lcstep_mmf1.input#1" relation="link11"/>
+    <link port="SpPhotoDet1.output" relation="link11"/>
+    <link port="lcstep_mmf1.input#1" relation="link8"/>
     <link port="lcstep_mmf1.output" relation="link5"/>
-    <link port="rxPAM1.input#1" relation="link7"/>
+    <link port="rxPAM1.input#1" relation="link11"/>
     <link port="rxPAM1.input#2" relation="link6"/>
-    <link port="NoiseAdder1.input#1" relation="link10"/>
-    <link port="NoiseAdder1.output" relation="link11"/>
 </entity>
