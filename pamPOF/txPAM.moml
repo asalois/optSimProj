@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE class PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<group>
+<class name="txPAM" extends="block_mode.usermodels.moml.MatlabCosimulationBase">
+<property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute" value="txPAM.dta"/>
+<property name="dllName" value="&quot;matcosim.dll&quot;"/>
+<property name="entryNameRoot" value="&quot;matcosim&quot;"/>
+<property name="componentType" value="&quot;txPAM&quot;"/>
+<property name="_vergilIconFile" class="ptolemy.kernel.util.StringAttribute" value="matcosim.bmp"/>
+<property name="_vergilToolTipText" class="ptolemy.kernel.util.StringAttribute" value="Make a PAM signal"/>
+<doc name="modelDesc">Make a PAM signal</doc>
+<property name="_vergilFunctionCodes" class="ptolemy.kernel.util.StringAttribute" value="E"/>
+<property name="_vergilDisplayName" class="ptolemy.kernel.util.StringAttribute" value="txPAM"/>
+<property name="MfileName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;txPAM&quot;">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
+</property>
+<property name="MfilePath" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;.&quot;">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
+</property>
+<property name="SaveMatlabWorkspace" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;No&quot;">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
+<property name="_vergilParamChoices" class="ptolemy.kernel.util.StringAttribute" value="No,Yes"/>
+</property>
+<property name="MatlabWorkspaceName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;&quot;">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
+<property name="_vergilParamEnabled" class="ptolemy.kernel.util.StringAttribute" value="SaveMatlabWorkspace:Yes"/>
+</property>
+<property name="noSamples" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="11">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
+</property>
+<property name="timeStep" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="1.e-12">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,s,General,false,false"/>
+</property>
+<property name="bitRate" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="1.e9">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,bps,General,false,false"/>
+</property>
+<property name="patternLength" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="7">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
+</property>
+<property name="pointsPerBit" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="4">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value=",,,General,false,false"/>
+</property>
+<property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="4">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="2,128,,General,false,false"/>
+</property>
+<property name="runNum" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="1,4096,,General,false,false"/>
+</property>
+<property name="number_input_ports" value="0">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="0,1,,Ports"/>
+</property>
+<property name="number_output_ports" value="1">
+<property name="_vergilParamLabels" class="ptolemy.kernel.util.StringAttribute" value="1,1,,Ports"/>
+</property>
+<property name="_input_types_" value="[5]"/>
+<property name="_output_types_" value="[1]"/>
+</class>
+</group>

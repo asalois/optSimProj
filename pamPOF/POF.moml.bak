@@ -1,0 +1,989 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="POF" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="OptSim-2019.09-build_1">
+    </property>
+    <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+    </property>
+    <property name="Director Type" class="ptolemy.data.expr.Parameter" value="&quot;LinkSIM&quot;">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[2253, 843]">
+    </property>
+    <property name="LinkSIM Director" class="com.rsoftdesign.simworks.link.LinkSimDirector">
+        <property name="iterations" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="Animation Delay" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Output Prefix" class="ptolemy.data.expr.Parameter" value="&quot;lstmp&quot;">
+        </property>
+        <property name="Plotting Mode" class="ptolemy.data.expr.Parameter" value="&quot;Use Icon Settings&quot;">
+        </property>
+        <property name="Save Input or Output Signal" class="ptolemy.data.expr.Parameter" value="&quot;Output&quot;">
+        </property>
+        <property name="Calculation Domain" class="ptolemy.data.expr.Parameter" value="&quot;Auto&quot;">
+        </property>
+        <property name="Criterion" class="ptolemy.data.expr.Parameter" value="&quot;RMS Error&quot;">
+        </property>
+        <property name="Maximum Number of Iterations" class="ptolemy.data.expr.Parameter" value="1000">
+        </property>
+        <property name="Simulation Mode" class="ptolemy.data.expr.Parameter" value="&quot;Steady State&quot;">
+        </property>
+        <property name="Results Generation" class="ptolemy.data.expr.Parameter" value="&quot;Final&quot;">
+        </property>
+        <property name="Results Interval" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="Inner Variable Name" class="ptolemy.kernel.util.StringAttribute" value="&quot;No_Scan&quot;">
+        </property>
+        <property name="Inner Starting Value" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Inner Ending Value" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Inner increment" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Outer Variable Name" class="ptolemy.kernel.util.StringAttribute" value="&quot;No_Scan&quot;">
+        </property>
+        <property name="Outer Starting Value" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Outer Ending Value" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Outer increment" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Statistical Meta Prefix" class="ptolemy.data.expr.Parameter" value="&quot;stat_&quot;">
+        </property>
+        <property name="Scan Meta Prefix" class="ptolemy.data.expr.Parameter" value="&quot;meta_&quot;">
+        </property>
+        <property name="Inner Iteration Meta Prefix" class="ptolemy.data.expr.Parameter" value="&quot;inner_&quot;">
+        </property>
+        <property name="Outer Iteration Meta Prefix" class="ptolemy.data.expr.Parameter" value="&quot;outer_&quot;">
+        </property>
+        <property name="Random Seed" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="Number of Statistical Runs" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Time Step Per Iteration" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Maximum Crosstalk Elements" class="ptolemy.data.expr.Parameter" value="4">
+        </property>
+        <property name="Number of Moments" class="ptolemy.data.expr.Parameter" value="2">
+        </property>
+        <property name="Simulate Routes" class="ptolemy.data.expr.Parameter" value="&quot;Ideal&quot;">
+        </property>
+        <property name="Simulation Accuracy" class="ptolemy.data.expr.Parameter" value="&quot;Standard&quot;">
+        </property>
+        <property name="Tolerance" class="ptolemy.data.expr.Parameter" value="0.001">
+        </property>
+        <property name="Verbosity Level" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="70.0, 35.0">
+        </property>
+    </property>
+    <property name="_vergilGridSize" class="ptolemy.kernel.util.StringAttribute" value="40">
+    </property>
+    <property name="lcsi_length" class="ptolemy.data.expr.Parameter" value="20">
+    </property>
+    <property name="Plaunch_dBm" class="ptolemy.data.expr.Parameter" value="0">
+    </property>
+    <property name="wavelength" class="ptolemy.data.expr.Parameter" value="655e-9">
+    </property>
+    <property name="rx_resp" class="ptolemy.data.expr.Parameter" value="0.38">
+    </property>
+    <property name="rx_Id" class="ptolemy.data.expr.Parameter" value="0.02e-9">
+    </property>
+    <property name="rx_bw" class="ptolemy.data.expr.Parameter" value="700e6">
+    </property>
+    <property name="tx_m" class="ptolemy.data.expr.Parameter" value="0.9">
+    </property>
+    <property name="rx_sens_Q" class="ptolemy.data.expr.Parameter" value="7">
+    </property>
+    <property name="rx_sens" class="ptolemy.data.expr.Parameter" value="dBm(rx_sens_dBm)">
+    </property>
+    <property name="rx_sens_dBm" class="ptolemy.data.expr.Parameter" value="-10">
+    </property>
+    <property name="w_x_um" class="ptolemy.data.expr.Parameter" value="wo_x_um*sqrt(1+(tx_distance_um/zo_x_um)^2)">
+    </property>
+    <property name="tx_distance_um" class="ptolemy.data.expr.Parameter" value="0">
+    </property>
+    <property name="wo_x_um" class="ptolemy.data.expr.Parameter" value="180*1.18*wavelength/pi^2/laser_theta_para_deg/1e-6">
+    </property>
+    <property name="laser_theta_para_deg" class="ptolemy.data.expr.Parameter" value="9">
+    </property>
+    <property name="zo_x_um" class="ptolemy.data.expr.Parameter" value="pi*wo_x_um^2/(wavelength/1e-6)">
+    </property>
+    <property name="iR_x_inv_um" class="ptolemy.data.expr.Parameter" value="tx_distance_um/(tx_distance_um^2+zo_x_um^2)">
+    </property>
+    <property name="w_y_um" class="ptolemy.data.expr.Parameter" value="wo_y_um*sqrt(1+(tx_distance_um/zo_y_um)^2)">
+    </property>
+    <property name="wo_y_um" class="ptolemy.data.expr.Parameter" value="180*1.18*wavelength/pi^2/laser_theta_perp_deg/1e-6">
+    </property>
+    <property name="laser_theta_perp_deg" class="ptolemy.data.expr.Parameter" value="28">
+    </property>
+    <property name="zo_y_um" class="ptolemy.data.expr.Parameter" value="pi*wo_y_um^2/(wavelength/1e-6)">
+    </property>
+    <property name="iR_y_inv_um" class="ptolemy.data.expr.Parameter" value="tx_distance_um/(tx_distance_um^2+zo_y_um^2)">
+    </property>
+    <property name="bitRate" class="ptolemy.data.expr.Parameter" value="1.0E10">
+    </property>
+    <property name="pointsPerBit" class="ptolemy.data.expr.Parameter" value="5">
+    </property>
+    <property name="patternLength" class="ptolemy.data.expr.Parameter" value="7">
+    </property>
+    <property name="bandwidth" class="ptolemy.data.expr.Parameter" value="bitRate * 2^pointsPerBit">
+    </property>
+    <property name="timeStep" class="ptolemy.data.expr.Parameter" value="1.0/bandwidth">
+    </property>
+    <property name="noSamples" class="ptolemy.data.expr.Parameter" value="pointsPerBit + patternLength">
+    </property>
+    <property name="timeSpan" class="ptolemy.data.expr.Parameter" value="timeStep * 2^noSamples">
+    </property>
+    <property name="runNum" class="ptolemy.data.expr.Parameter" value="1">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="3.8979842496929">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{946.9955237989325, 353.8671875}">
+    </property>
+    <entity name="VOA1" class="linksim.src.stars.OpticalNormalizer">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="3">
+        </property>
+        <property name="AttenuationType" class="ptolemy.data.expr.Parameter" value="&quot;Uniform&quot;">
+        </property>
+        <property name="AvePowerOut" class="ptolemy.data.expr.Parameter" value="Plaunch_dBm">
+        </property>
+        <property name="number_port_sets" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="number_port_sets">
+        </property>
+        <property name="number_output_ports" class="ptolemy.data.expr.Parameter" value="number_port_sets">
+        </property>
+        <doc name="OpticalNormalizerDesc">Optical Power Normalizer</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="840.0, 360.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="output#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="SpDMLaser1" class="linksim.src.stars.SpatialDirectModulatedLaser">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="3">
+        </property>
+        <property name="wavelength" class="ptolemy.data.expr.Parameter" value="wavelength">
+        </property>
+        <property name="mode" class="ptolemy.data.expr.Parameter" value="&quot;FreqGrid&quot;">
+        </property>
+        <property name="deltaFreq" class="ptolemy.data.expr.Parameter" value="1.0E11">
+        </property>
+        <property name="azimuth" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="ellipticity" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="force_Ey" class="ptolemy.data.expr.Parameter" value="&quot;no&quot;">
+        </property>
+        <property name="effint" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="K" class="ptolemy.data.expr.Parameter" value="0.987747841991352">
+        </property>
+        <property name="indx" class="ptolemy.data.expr.Parameter" value="1.34266475922284">
+        </property>
+        <property name="geometry" class="ptolemy.data.expr.Parameter" value="&quot;volumetric&quot;">
+        </property>
+        <property name="Lact" class="ptolemy.data.expr.Parameter" value="5.0E-6">
+        </property>
+        <property name="Lstp" class="ptolemy.data.expr.Parameter" value="2.5E-4">
+        </property>
+        <property name="Lcav" class="ptolemy.data.expr.Parameter" value="0.0345">
+        </property>
+        <property name="W" class="ptolemy.data.expr.Parameter" value="0.0015">
+        </property>
+        <property name="V" class="ptolemy.data.expr.Parameter" value="3.13717827396286e-011">
+        </property>
+        <property name="mirror_effects" class="ptolemy.data.expr.Parameter" value="&quot;defined&quot;">
+        </property>
+        <property name="Amir" class="ptolemy.data.expr.Parameter" value="21.1594476286449565">
+        </property>
+        <property name="F" class="ptolemy.data.expr.Parameter" value="0.385">
+        </property>
+        <property name="R1" class="ptolemy.data.expr.Parameter" value="0.9966">
+        </property>
+        <property name="R2" class="ptolemy.data.expr.Parameter" value="0.9989">
+        </property>
+        <property name="intrinsic_loss" class="ptolemy.data.expr.Parameter" value="&quot;defined&quot;">
+        </property>
+        <property name="Aint" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="loss_ratio" class="ptolemy.data.expr.Parameter" value="2.0">
+        </property>
+        <property name="b" class="ptolemy.data.expr.Parameter" value="7.67758823767013e-005         ">
+        </property>
+        <property name="photon_lifetime" class="ptolemy.data.expr.Parameter" value="&quot;defined&quot;">
+        </property>
+        <property name="tp" class="ptolemy.data.expr.Parameter" value="2.98661464781877e-012">
+        </property>
+        <property name="A" class="ptolemy.data.expr.Parameter" value="2498515911.07749">
+        </property>
+        <property name="B" class="ptolemy.data.expr.Parameter" value="4.85523365635947e-011">
+        </property>
+        <property name="C" class="ptolemy.data.expr.Parameter" value="3.55793701498824e-029">
+        </property>
+        <property name="gain" class="ptolemy.data.expr.Parameter" value="&quot;linear&quot;">
+        </property>
+        <property name="Go" class="ptolemy.data.expr.Parameter" value="3.03432019013620922E-5">
+        </property>
+        <property name="Ntr" class="ptolemy.data.expr.Parameter" value="1.48472091023025e+018">
+        </property>
+        <property name="Ns" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="saturation" class="ptolemy.data.expr.Parameter" value="&quot;Channin&quot;">
+        </property>
+        <property name="e" class="ptolemy.data.expr.Parameter" value="1.0E-15">
+        </property>
+        <property name="a" class="ptolemy.data.expr.Parameter" value="2.0">
+        </property>
+        <property name="RIN" class="ptolemy.data.expr.Parameter" value="-150.0">
+        </property>
+        <property name="Rd" class="ptolemy.data.expr.Parameter" value="5.0">
+        </property>
+        <property name="Von" class="ptolemy.data.expr.Parameter" value="2.0">
+        </property>
+        <property name="Drive_Scheme" class="ptolemy.data.expr.Parameter" value="&quot;direct_drive&quot;">
+        </property>
+        <property name="Rs" class="ptolemy.data.expr.Parameter" value="50.0">
+        </property>
+        <property name="Bias_Value" class="ptolemy.data.expr.Parameter" value="&quot;Io&quot;">
+        </property>
+        <property name="Io" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Po" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Parasitics" class="ptolemy.data.expr.Parameter" value="&quot;off&quot;">
+        </property>
+        <property name="Lb" class="ptolemy.data.expr.Parameter" value="3.0E-10">
+        </property>
+        <property name="Cp" class="ptolemy.data.expr.Parameter" value="2.0E-12">
+        </property>
+        <property name="eps" class="ptolemy.data.expr.Parameter" value="1.0E-6">
+        </property>
+        <property name="initial_tstep" class="ptolemy.data.expr.Parameter" value="1.0E-13">
+        </property>
+        <property name="min_tstep" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="spatial_effects" class="ptolemy.data.expr.Parameter" value="&quot;on&quot;">
+        </property>
+        <property name="mode_mapping" class="ptolemy.data.expr.Parameter" value="&quot;single&quot;">
+        </property>
+        <property name="multi_mode_powers" class="ptolemy.data.expr.Parameter" value="&quot;1.0&quot;">
+        </property>
+        <property name="mode_polarization" class="ptolemy.data.expr.Parameter" value="&quot;xy_same&quot;">
+        </property>
+        <property name="mode_default_domain" class="ptolemy.data.expr.Parameter" value="&quot;yes&quot;">
+        </property>
+        <property name="mode_width_x" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="mode_width_y" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="mode_default_grid_spacing" class="ptolemy.data.expr.Parameter" value="&quot;no&quot;">
+        </property>
+        <property name="mode_dx" class="ptolemy.data.expr.Parameter" value="0.4">
+        </property>
+        <property name="mode_dy" class="ptolemy.data.expr.Parameter" value="0.4">
+        </property>
+        <property name="x_single_mode_type" class="ptolemy.data.expr.Parameter" value="&quot;HG&quot;">
+        </property>
+        <property name="x_multi_mode_type" class="ptolemy.data.expr.Parameter" value="&quot;LG&quot;">
+        </property>
+        <property name="x_mode_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="x_multimode_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="x_l" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="x_m" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="x_l_lo" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="x_l_hi" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="x_m_lo" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="x_m_hi" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="x_wo" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="x_iRo" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="x_wox" class="ptolemy.data.expr.Parameter" value="w_x_um">
+        </property>
+        <property name="x_iRox" class="ptolemy.data.expr.Parameter" value="iR_x_inv_um">
+        </property>
+        <property name="x_woy" class="ptolemy.data.expr.Parameter" value="w_y_um">
+        </property>
+        <property name="x_iRoy" class="ptolemy.data.expr.Parameter" value="iR_y_inv_um">
+        </property>
+        <property name="x_Nclad" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="x_Ncore" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="x_core_radius" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="x_outer_radius" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="x_inner_radius" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="y_single_mode_type" class="ptolemy.data.expr.Parameter" value="&quot;LG&quot;">
+        </property>
+        <property name="y_multi_mode_type" class="ptolemy.data.expr.Parameter" value="&quot;LG&quot;">
+        </property>
+        <property name="y_mode_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="y_multimode_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="y_l" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="y_m" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="y_l_lo" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="y_l_hi" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="y_m_lo" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="y_m_hi" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="y_wo" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="y_iRo" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="y_wox" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="y_iRox" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="y_woy" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="y_iRoy" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="y_Nclad" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="y_Ncore" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="y_core_radius" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="y_outer_radius" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="y_inner_radius" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="test_function" class="ptolemy.data.expr.Parameter" value="&quot;LI&quot;">
+        </property>
+        <property name="Test_LItype" class="ptolemy.data.expr.Parameter" value="&quot;auto-scaled&quot;">
+        </property>
+        <property name="Test_Imin" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="Test_Imax" class="ptolemy.data.expr.Parameter" value="0.06">
+        </property>
+        <property name="Test_LIpoints" class="ptolemy.data.expr.Parameter" value="201">
+        </property>
+        <property name="Test_actype" class="ptolemy.data.expr.Parameter" value="&quot;Ith-based&quot;">
+        </property>
+        <property name="Test_I1ac" class="ptolemy.data.expr.Parameter" value="1.0E-3">
+        </property>
+        <property name="Test_I2ac" class="ptolemy.data.expr.Parameter" value="0.0025">
+        </property>
+        <property name="Test_I3ac" class="ptolemy.data.expr.Parameter" value="0.005">
+        </property>
+        <property name="Test_I4ac" class="ptolemy.data.expr.Parameter" value="0.01">
+        </property>
+        <property name="Test_I5ac" class="ptolemy.data.expr.Parameter" value="0.02">
+        </property>
+        <property name="Test_acxscale" class="ptolemy.data.expr.Parameter" value="&quot;log&quot;">
+        </property>
+        <property name="Test_acyscale" class="ptolemy.data.expr.Parameter" value="&quot;linear&quot;">
+        </property>
+        <property name="Test_freqlow" class="ptolemy.data.expr.Parameter" value="1.0E7">
+        </property>
+        <property name="Test_freqhigh" class="ptolemy.data.expr.Parameter" value="1.0E12">
+        </property>
+        <property name="Test_acpoints" class="ptolemy.data.expr.Parameter" value="201">
+        </property>
+        <property name="test_mode_polarization" class="ptolemy.data.expr.Parameter" value="&quot;x&quot;">
+        </property>
+        <property name="test_mode_number" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="test_mode_wavelength" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="test_mode_plot" class="ptolemy.data.expr.Parameter" value="&quot;magnitude&quot;">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="number_output_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <doc name="SpatialDirectModulatedLaserDesc">Spatial Direct Modulated Laser</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="760.0, 360.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="output#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="LCSImmf1" class="linksim.src.stars.LargeCoreStepIndexFiber">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="5">
+        </property>
+        <property name="peak_index" class="ptolemy.data.expr.Parameter" value="1.49">
+        </property>
+        <property name="delta" class="ptolemy.data.expr.Parameter" value="100*(1-sqrt(1-(0.5/1.49)^2))">
+        </property>
+        <property name="core_radius" class="ptolemy.data.expr.Parameter" value="500">
+        </property>
+        <property name="length" class="ptolemy.data.expr.Parameter" value="lcsi_length">
+        </property>
+        <property name="attenuation" class="ptolemy.data.expr.Parameter" value="160">
+        </property>
+        <property name="full_output_integration" class="ptolemy.data.expr.Parameter" value="&quot;on&quot;">
+        </property>
+        <property name="angle_spacing" class="ptolemy.data.expr.Parameter" value="asin(0.5/1.49)/intRound(asin(0.5/1.49)/0.005)">
+        </property>
+        <property name="max_angle_expansion" class="ptolemy.data.expr.Parameter" value="50.0">
+        </property>
+        <property name="input_launch" class="ptolemy.data.expr.Parameter" value="&quot;spatial_input&quot;">
+        </property>
+        <property name="points_per_angle_bin" class="ptolemy.data.expr.Parameter" value="2">
+        </property>
+        <property name="cleanup_files" class="ptolemy.data.expr.Parameter" value="&quot;yes&quot;">
+        </property>
+        <property name="NA_truncation" class="ptolemy.data.expr.Parameter" value="&quot;yes&quot;">
+        </property>
+        <property name="launch_polarization" class="ptolemy.data.expr.Parameter" value="&quot;xy_same&quot;">
+        </property>
+        <property name="smooth_file_data" class="ptolemy.data.expr.Parameter" value="&quot;no&quot;">
+        </property>
+        <property name="smoothing_order" class="ptolemy.data.expr.Parameter" value="4">
+        </property>
+        <property name="smoothing_points" class="ptolemy.data.expr.Parameter" value="20">
+        </property>
+        <property name="launch_fwhm" class="ptolemy.data.expr.Parameter" value="10.0">
+        </property>
+        <property name="launch_file" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="launch_fwhm_Y" class="ptolemy.data.expr.Parameter" value="10.0">
+        </property>
+        <property name="launch_file_Y" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="delta_z" class="ptolemy.data.expr.Parameter" value="0.01">
+        </property>
+        <property name="coupling_coeff_model" class="ptolemy.data.expr.Parameter" value="&quot;sigmoid&quot;">
+        </property>
+        <property name="D0" class="ptolemy.data.expr.Parameter" value="6.356e-5">
+        </property>
+        <property name="D1" class="ptolemy.data.expr.Parameter" value="2.338e-4">
+        </property>
+        <property name="D2" class="ptolemy.data.expr.Parameter" value="0.321">
+        </property>
+        <property name="sigmaD" class="ptolemy.data.expr.Parameter" value="11.66">
+        </property>
+        <property name="diff_mode_atten" class="ptolemy.data.expr.Parameter" value="&quot;ss_based&quot;">
+        </property>
+        <property name="A2" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="sigma1" class="ptolemy.data.expr.Parameter" value="6.5327">
+        </property>
+        <property name="theta1" class="ptolemy.data.expr.Parameter" value="0.2689">
+        </property>
+        <property name="sigma2" class="ptolemy.data.expr.Parameter" value="4.0744">
+        </property>
+        <property name="theta2" class="ptolemy.data.expr.Parameter" value="0.2689">
+        </property>
+        <property name="plot_full_input_intensity" class="ptolemy.data.expr.Parameter" value="&quot;yes&quot;">
+        </property>
+        <property name="plot_intensity_evolution" class="ptolemy.data.expr.Parameter" value="&quot;yes&quot;">
+        </property>
+        <property name="plot_eaf_evolution" class="ptolemy.data.expr.Parameter" value="&quot;yes&quot;">
+        </property>
+        <property name="plot_additional_lengths" class="ptolemy.data.expr.Parameter" value="{0}">
+        </property>
+        <property name="output_type" class="ptolemy.data.expr.Parameter" value="&quot;mode_coupling_plot&quot;">
+        </property>
+        <doc name="LargeCoreStepIndexFiberDesc">Large-Core Step-Index Fiber</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="920.0, 360.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="output" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="RX1" class="linksim.src.stars.SpatialReceiver">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="7">
+        </property>
+        <property name="n_representation" class="ptolemy.data.expr.Parameter" value="&quot;MC&quot;">
+        </property>
+        <property name="pd_APD_Multiplier" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="pd_ionizationCoef" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="pd_QEmethod" class="ptolemy.data.expr.Parameter" value="&quot;Defined&quot;">
+        </property>
+        <property name="pd_quantumEff" class="ptolemy.data.expr.Parameter" value="6.626070040e-34*2.99792458e8*rx_resp/1.6021766208e-19/wavelength">
+        </property>
+        <property name="pd_absorptionCoeff" class="ptolemy.data.expr.Parameter" value="0.68e6">
+        </property>
+        <property name="pd_layerThickness" class="ptolemy.data.expr.Parameter" value="0.5e-6">
+        </property>
+        <property name="pd_reflectivity" class="ptolemy.data.expr.Parameter" value="0.04">
+        </property>
+        <property name="pd_Responsivity" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="pd_detect" class="ptolemy.data.expr.Parameter" value="&quot;false&quot;">
+        </property>
+        <property name="pd_modeltype" class="ptolemy.data.expr.Parameter" value="&quot;empirical&quot;">
+        </property>
+        <property name="pd_loadResistance" class="ptolemy.data.expr.Parameter" value="50.0">
+        </property>
+        <property name="pd_seriesResistance" class="ptolemy.data.expr.Parameter" value="5.0">
+        </property>
+        <property name="pd_deviceCapacitance" class="ptolemy.data.expr.Parameter" value="50e-15">
+        </property>
+        <property name="pd_electronVelocity" class="ptolemy.data.expr.Parameter" value="6.5e6">
+        </property>
+        <property name="pd_holeVelocity" class="ptolemy.data.expr.Parameter" value="4.8e6">
+        </property>
+        <property name="pd_lossGain" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="pd_respfp" class="ptolemy.data.expr.Parameter" value="52.259e9">
+        </property>
+        <property name="pd_respfo" class="ptolemy.data.expr.Parameter" value="25.679e9">
+        </property>
+        <property name="pd_respg" class="ptolemy.data.expr.Parameter" value="0.5874">
+        </property>
+        <property name="pd_darkCurrent" class="ptolemy.data.expr.Parameter" value="rx_Id">
+        </property>
+        <property name="fe_modeltype" class="ptolemy.data.expr.Parameter" value="&quot;defined&quot;">
+        </property>
+        <property name="fe_filename" class="com.rsoftdesign.simworks.apps.query.parameter.OptSimFileParameter" value="&quot;&quot;">
+        </property>
+        <property name="fe_tZ" class="ptolemy.data.expr.Parameter" value="1000">
+        </property>
+        <property name="fe_zero" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="fe_pole" class="ptolemy.data.expr.Parameter" value="1e18">
+        </property>
+        <property name="fe_lo_trunc" class="ptolemy.data.expr.Parameter" value="&quot;extend&quot;">
+        </property>
+        <property name="fe_hi_trunc" class="ptolemy.data.expr.Parameter" value="&quot;extend&quot;">
+        </property>
+        <property name="n_a0" class="ptolemy.data.expr.Parameter" value="(tx_m/3*rx_resp*rx_sens/rx_sens_Q)^2/rx_bw+0*5.4617e-23">
+        </property>
+        <property name="n_a2" class="ptolemy.data.expr.Parameter" value="0*2.924e-43">
+        </property>
+        <property name="n_a4" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="n_a6" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="flt_type" class="ptolemy.data.expr.Parameter" value="&quot;LPbessel&quot;">
+        </property>
+        <property name="flt_preserve_alignment" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="flt_bandwidth" class="ptolemy.data.expr.Parameter" value="rx_bw">
+        </property>
+        <property name="flt_order" class="ptolemy.data.expr.Parameter" value="4">
+        </property>
+        <property name="flt_lossGain" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="flt_passbandRipple" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="flt_geometricCenter" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="include_thermal" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="include_sigshot" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="include_darkshot" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="include_sigspon" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="include_sponspon" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="include_SE_noise" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="include_rin" class="ptolemy.data.expr.Parameter" value="&quot;YES&quot;">
+        </property>
+        <property name="monte_seed" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="pd_spatial_effects" class="ptolemy.data.expr.Parameter" value="&quot;off&quot;">
+        </property>
+        <property name="pd_aperture_type" class="ptolemy.data.expr.Parameter" value="&quot;round&quot;">
+        </property>
+        <property name="pd_aperture_dimension" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="pd_aperture_inner_dimension" class="ptolemy.data.expr.Parameter" value="5">
+        </property>
+        <property name="test_display" class="ptolemy.data.expr.Parameter" value="&quot;norm_phase&quot;">
+        </property>
+        <property name="test_output" class="ptolemy.data.expr.Parameter" value="&quot;elec_filter_spectrum&quot;">
+        </property>
+        <doc name="SpatialReceiverDesc">SpatialReceiver</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1000.0, 360.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+        <port name="output" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+        </port>
+    </entity>
+    <entity name="txPAM1" class="txPAM">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="number_input_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="0">
+        </property>
+        <property name="number_output_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="MfileName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;txPAM&quot;">
+        </property>
+        <property name="MfilePath" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;.&quot;">
+        </property>
+        <property name="SaveMatlabWorkspace" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;No&quot;">
+        </property>
+        <property name="MatlabWorkspaceName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;&quot;">
+        </property>
+        <property name="spatial_handling" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;auto&quot;">
+        </property>
+        <property name="default_grid_spacing" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
+        </property>
+        <property name="dx" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
+        </property>
+        <property name="dy" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
+        </property>
+        <property name="default_domain" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
+        </property>
+        <property name="xmin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
+        </property>
+        <property name="xmax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
+        </property>
+        <property name="ymin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
+        </property>
+        <property name="ymax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
+        </property>
+        <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>txPAM.dta</configure>
+        </property>
+        <property name="_vergilIconFile" class="ptolemy.kernel.util.StringAttribute" value="matcosim.bmp">
+        </property>
+        <doc name="modelDesc">Make a PAM signal</doc>
+        <property name="noSamples" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="noSamples">
+        </property>
+        <property name="timeStep" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="timeStep">
+        </property>
+        <property name="bitRate" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="bitRate">
+        </property>
+        <property name="patternLength" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="patternLength">
+        </property>
+        <property name="pointsPerBit" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="pointsPerBit">
+        </property>
+        <property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="4">
+        </property>
+        <property name="runNum" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="runNum">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="680.0, 440.0">
+        </property>
+    </entity>
+    <entity name="rxPAM1" class="rxPAM">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="number_input_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="2">
+        </property>
+        <property name="number_output_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="0">
+        </property>
+        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="MfileName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;rxPAM&quot;">
+        </property>
+        <property name="MfilePath" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;.&quot;">
+        </property>
+        <property name="SaveMatlabWorkspace" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;No&quot;">
+        </property>
+        <property name="MatlabWorkspaceName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;&quot;">
+        </property>
+        <property name="spatial_handling" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;auto&quot;">
+        </property>
+        <property name="default_grid_spacing" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
+        </property>
+        <property name="dx" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
+        </property>
+        <property name="dy" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
+        </property>
+        <property name="default_domain" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
+        </property>
+        <property name="xmin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
+        </property>
+        <property name="xmax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
+        </property>
+        <property name="ymin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
+        </property>
+        <property name="ymax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
+        </property>
+        <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>rxPAM.dta</configure>
+        </property>
+        <property name="_vergilIconFile" class="ptolemy.kernel.util.StringAttribute" value="matcosim.bmp">
+        </property>
+        <doc name="modelDesc">Rx a PAM signal</doc>
+        <property name="noSamples" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="noSamples">
+        </property>
+        <property name="timeStep" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="timeStep">
+        </property>
+        <property name="bitRate" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="bitRate">
+        </property>
+        <property name="patternLength" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="patternLength">
+        </property>
+        <property name="pointsPerBit" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="pointsPerBit">
+        </property>
+        <property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="4">
+        </property>
+        <property name="runNum" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="runNum">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1080.0, 440.0">
+        </property>
+    </entity>
+    <entity name="SigPlt1" class="linksim.src.stars.SignalAnalyzer">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <doc name="SignalAnalyzerDesc">Signal Analyzer</doc>
+        <property name="FilenameRoot" class="ptolemy.data.expr.Parameter" value="&quot;&quot;">
+        </property>
+        <property name="Sig_Representation" class="ptolemy.data.expr.Parameter" value="&quot;Default&quot;">
+        </property>
+        <property name="Polarization" class="ptolemy.data.expr.Parameter" value="&quot;comb_x_and_y&quot;">
+        </property>
+        <property name="ShowNoise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="Toffset" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerThreshold" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerUnits" class="ptolemy.data.expr.Parameter" value="&quot;Watt&quot;">
+        </property>
+        <property name="seed" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Plot" class="ptolemy.data.expr.Parameter" value="&quot;Save&quot;">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="720.0, 280.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="SigPlt2" class="linksim.src.stars.SignalAnalyzer">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <doc name="SignalAnalyzerDesc">Signal Analyzer</doc>
+        <property name="FilenameRoot" class="ptolemy.data.expr.Parameter" value="&quot;&quot;">
+        </property>
+        <property name="Sig_Representation" class="ptolemy.data.expr.Parameter" value="&quot;Default&quot;">
+        </property>
+        <property name="Polarization" class="ptolemy.data.expr.Parameter" value="&quot;comb_x_and_y&quot;">
+        </property>
+        <property name="ShowNoise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="Toffset" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerThreshold" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerUnits" class="ptolemy.data.expr.Parameter" value="&quot;Watt&quot;">
+        </property>
+        <property name="seed" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Plot" class="ptolemy.data.expr.Parameter" value="&quot;Save&quot;">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="840.0, 280.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="SigPlt3" class="linksim.src.stars.SignalAnalyzer">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <doc name="SignalAnalyzerDesc">Signal Analyzer</doc>
+        <property name="FilenameRoot" class="ptolemy.data.expr.Parameter" value="&quot;&quot;">
+        </property>
+        <property name="Sig_Representation" class="ptolemy.data.expr.Parameter" value="&quot;Default&quot;">
+        </property>
+        <property name="Polarization" class="ptolemy.data.expr.Parameter" value="&quot;comb_x_and_y&quot;">
+        </property>
+        <property name="ShowNoise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="Toffset" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerThreshold" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerUnits" class="ptolemy.data.expr.Parameter" value="&quot;Watt&quot;">
+        </property>
+        <property name="seed" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Plot" class="ptolemy.data.expr.Parameter" value="&quot;Save&quot;">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="920.0, 280.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="SigPlt4" class="linksim.src.stars.SignalAnalyzer">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <doc name="SignalAnalyzerDesc">Signal Analyzer</doc>
+        <property name="FilenameRoot" class="ptolemy.data.expr.Parameter" value="&quot;&quot;">
+        </property>
+        <property name="Sig_Representation" class="ptolemy.data.expr.Parameter" value="&quot;Default&quot;">
+        </property>
+        <property name="Polarization" class="ptolemy.data.expr.Parameter" value="&quot;comb_x_and_y&quot;">
+        </property>
+        <property name="ShowNoise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="Toffset" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerThreshold" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerUnits" class="ptolemy.data.expr.Parameter" value="&quot;Watt&quot;">
+        </property>
+        <property name="seed" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Plot" class="ptolemy.data.expr.Parameter" value="&quot;Save&quot;">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1000.0, 280.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="SigPlt5" class="linksim.src.stars.SignalAnalyzer">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <doc name="SignalAnalyzerDesc">Signal Analyzer</doc>
+        <property name="FilenameRoot" class="ptolemy.data.expr.Parameter" value="&quot;&quot;">
+        </property>
+        <property name="Sig_Representation" class="ptolemy.data.expr.Parameter" value="&quot;Default&quot;">
+        </property>
+        <property name="Polarization" class="ptolemy.data.expr.Parameter" value="&quot;comb_x_and_y&quot;">
+        </property>
+        <property name="ShowNoise" class="ptolemy.data.expr.Parameter" value="&quot;Yes&quot;">
+        </property>
+        <property name="Toffset" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerThreshold" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="PowerUnits" class="ptolemy.data.expr.Parameter" value="&quot;Watt&quot;">
+        </property>
+        <property name="seed" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="Plot" class="ptolemy.data.expr.Parameter" value="&quot;Save&quot;">
+        </property>
+        <property name="number_input_ports" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="1080.0, 280.0">
+        </property>
+        <port name="input#1" class="com.rsoftdesign.simworks.link.PsiTypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <relation name="link1" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location">
+        </property>
+    </relation>
+    <relation name="link2" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location">
+        </property>
+    </relation>
+    <relation name="link3" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location">
+        </property>
+    </relation>
+    <relation name="link4" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link5" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link6" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link7" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link8" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link9" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link10" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link11" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <link port="VOA1.input#1" relation="link3"/>
+    <link port="VOA1.output#1" relation="link2"/>
+    <link port="VOA1.output#1" relation="link9"/>
+    <link port="SpDMLaser1.input#1" relation="link4"/>
+    <link port="SpDMLaser1.output#1" relation="link3"/>
+    <link port="SpDMLaser1.output#1" relation="link8"/>
+    <link port="LCSImmf1.input#1" relation="link2"/>
+    <link port="LCSImmf1.output" relation="link1"/>
+    <link port="LCSImmf1.output" relation="link10"/>
+    <link port="RX1.input#1" relation="link1"/>
+    <link port="RX1.output" relation="link5"/>
+    <link port="RX1.output" relation="link11"/>
+    <link port="txPAM1.output#1" relation="link4"/>
+    <link port="txPAM1.output#1" relation="link6"/>
+    <link port="txPAM1.output#1" relation="link7"/>
+    <link port="rxPAM1.input#1" relation="link5"/>
+    <link port="rxPAM1.input#2" relation="link6"/>
+    <link port="SigPlt1.input#1" relation="link7"/>
+    <link port="SigPlt2.input#1" relation="link8"/>
+    <link port="SigPlt3.input#1" relation="link9"/>
+    <link port="SigPlt4.input#1" relation="link10"/>
+    <link port="SigPlt5.input#1" relation="link11"/>
+</entity>

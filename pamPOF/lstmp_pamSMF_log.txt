@@ -1,0 +1,20 @@
+Starting Simulation: 5/18/21 8:39 PM
+Simulating component 'txPAM1' of type 'txPAM'
+Simulating component 'SigPlt1' of type 'SignalAnalyzer'
+Simulating component 'DMLaser1' of type 'DirectModulatedLaser'
+Simulating component 'SigPlt2' of type 'SignalAnalyzer'
+Simulating component 'lcstep_mmf1' of type 'LargeCoreStepIndexFiber'
+Simulation Error: ERROR: pamSMF.lcstep_mmf1:  LargeCoreStepIndexFiber lcstep_mmf1: Input OpSig #1 has an Ex component but no spatial profile attached.  
+Finished Simulation: 5/18/21 8:39 PM
+Starting Simulation: 5/18/21 8:47 PM
+Simulating component 'txPAM1' of type 'txPAM'
+Simulating component 'SigPlt1' of type 'SignalAnalyzer'
+Simulating component 'SpDMLaser1' of type 'SpatialDirectModulatedLaser'
+Simulating component 'SigPlt2' of type 'SignalAnalyzer'
+Simulating component 'lcstep_mmf1' of type 'LargeCoreStepIndexFiber'
+  Calling: bdutil -l1.55 -fa -fwin0 -da0.143239 -n1.49 -nn1.49 lstmp_lcstep_mmf1_angle_x_in_1.tmp lstmp_lcstep_mmf1_angle_x_out_1.tmp
+Simulating component 'SigPlt3' of type 'SignalAnalyzer'
+Simulating component 'SpPhotoDet1' of type 'SpatialPhotodetector'
+Simulating component 'SigPlt4' of type 'SignalAnalyzer'
+Simulating component 'rxPAM1' of type 'rxPAM'
+Finished Simulation: 5/18/21 8:50 PM
