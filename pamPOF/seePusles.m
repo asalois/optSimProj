@@ -4,11 +4,11 @@
 % Electrical & Computer Engineering Department
 % Created by Alexander Salois
 clear; clc; close all;
-
+tic
 %% load files
 load('pam_pow_sqPulse_01.mat')
 outSig1 = real(InNode{1,1}.Signal.samples);
-load('pam_pow_20_len_1000_0010.mat')
+load('pam_pow_18_len_0500_0001.mat')
 rx = real(InNode{1,1}.Signal.samples);
 inSig = real(InNode{1,2}.Signal.samples);
 
@@ -25,7 +25,8 @@ inSig = (inSig -0.5) *6;
 
 %% cut
 start = 100;
-done = 16*100000;
+done = 16*10000*2;
+% done = 16*10*2;
 rx = rx(start:start+done);
 inSig = inSig(start:start+done);
 
@@ -36,12 +37,12 @@ filt = flip(filt);
 filt = filt/sum(filt);
 
 %% filter
-snr = 100;
-delay = 43;
+snr = 15;
+delay = 40;
 rx_noise = awgn(rx,snr,'measured');
 filtSig = filter(filt,1,rx_noise);
-filtSig_no = filter(rx,1,rx_noise);
 filtSig = filtSig(delay:end);
+filtSig_no = filter(filt,1,rx);
 filtSig_no = filtSig_no(delay:end);
 %% plots
 % figure()
@@ -55,14 +56,20 @@ filtSig_no = filtSig_no(delay:end);
 % plot(rx)
 % plot(filtSig)
 % hold off
-
+% 
 % figure()
 % hold on
 % plot(inSig)
 % plot(filtSig)
 % hold off
+% toc
+%% eyes
 symPer = 32;
-eyediagram(rx,symPer)
-% eyediagram(inSig,symPer)
-eyediagram(filtSig,symPer)
-eyediagram(filtSig_no,symPer)
+offset = 12;
+eyediagram(rx,symPer,symPer,offset)
+saveas(gcf,'eye_noF_noN.png')
+eyediagram(filtSig,symPer,symPer,offset)
+saveas(gcf,'eye_F_N.png')
+eyediagram(filtSig_no,symPer,symPer,offset)
+saveas(gcf,'eye_F_noN.png')
+toc
