@@ -6,7 +6,9 @@
 clear; clc; close all;
 
 % load file
-loadName = sprintf('pam_snr_%02d_len_%04d_%04d',40,9,1)
+len = 100
+pick = 33
+loadName = sprintf('pam_pow_%02d_len_%04d_%04d',19,len*10,pick)
 load(loadName)
 
 % rescale to work with pamdemod
@@ -38,13 +40,24 @@ bitsOut = pamdemod(selectOut,M);
 % get BER
 [numWrong,ber] = biterr(bitsIn,bitsOut)
 
-sel = 1:2^10;
-figure()
-hold on
-plot(inSig(sel))
-plot(outSig(sel))
-hold off
+% sel = 1:2^10;
+% figure()
+% hold on
+% plot(inSig(sel))
+% plot(outSig(sel))
+% hold off
 % 
-% %%
-% eyediagram(inSig,2^pointsPerBit)
-% eyediagram(outSig,2^pointsPerBit)
+%%
+skip = 1024;
+x = 2^16;
+figure()
+h = subplot(1,2,1)
+%eyediagram(inSig(1:x),2*2^pointsPerBit)
+eyediagram(outSig(1:x),2*2*2^pointsPerBit,2*2^pointsPerBit,2*2^pointsPerBit/2,'b-',h)
+title('100 m with no Noise')
+% saveas(gcf,'eye_100_no_noise.png')
+
+h = subplot(1,2,2)
+eyediagram(noisy,2*2*2^pointsPerBit,2*2^pointsPerBit,2*2^pointsPerBit/2,'b-',h)
+title('100 m with Noise')
+% saveas(gcf,'eye_100_noise.png')

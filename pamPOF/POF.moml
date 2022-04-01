@@ -8,7 +8,7 @@
     </property>
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="OptSim-2019.09-build_1">
     </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1229, 627]">
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1567, 780]">
     </property>
     <property name="LinkSIM Director" class="com.rsoftdesign.simworks.link.LinkSimDirector">
         <property name="iterations" class="ptolemy.data.expr.Parameter" value="1">
@@ -84,7 +84,7 @@
     </property>
     <property name="pointsPerBit" class="ptolemy.data.expr.Parameter" value="3">
     </property>
-    <property name="patternLength" class="ptolemy.data.expr.Parameter" value="18">
+    <property name="patternLength" class="ptolemy.data.expr.Parameter" value="12">
     </property>
     <property name="bandwidth" class="ptolemy.data.expr.Parameter" value="bitRate * 2^pointsPerBit">
     </property>
@@ -94,11 +94,11 @@
     </property>
     <property name="timeSpan" class="ptolemy.data.expr.Parameter" value="timeStep * 2^noSamples">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="2.3778625954198">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.Parameter" value="3.7471441689624">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{436.4253611556983, 457.7160914927769}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.Parameter" value="{441.2523280661857, 385.9527525094103}">
     </property>
-    <property name="runNum" class="ptolemy.data.expr.Parameter" value="1">
+    <property name="runNum" class="ptolemy.data.expr.Parameter" value="3">
     </property>
     <property name="OSNR" class="ptolemy.data.expr.Parameter" value="91">
         <doc name="desc">oSNR in dB</doc>
@@ -106,6 +106,11 @@
         </property>
     </property>
     <property name="fiberLength" class="ptolemy.data.expr.Parameter" value="100">
+    </property>
+    <property name="M" class="ptolemy.data.expr.Parameter" value="8">
+        <doc name="desc">PAM Order</doc>
+        <property name="_vergilDescEdited" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
     </property>
     <entity name="txPAM1" class="txPAM">
         <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
@@ -163,12 +168,12 @@
         </property>
         <property name="pointsPerBit" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="pointsPerBit">
         </property>
-        <property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="4">
+        <property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="M">
         </property>
         <property name="runNum" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="runNum">
         </property>
         <doc name="modelDesc">Make a PAM signal</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="200.0, 440.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="320.0, 440.0">
         </property>
     </entity>
     <entity name="SpDMLaser1" class="linksim.src.stars.SpatialDirectModulatedLaser">
@@ -507,8 +512,76 @@
             <property name="multiport"/>
         </port>
     </entity>
-    <entity name="lcstep_mmf1" class="linksim.src.stars.LargeCoreStepIndexFiber">
+    <entity name="rxPAM1" class="rxPAM">
         <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
+        </property>
+        <property name="number_input_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="2">
+        </property>
+        <property name="number_output_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="0">
+        </property>
+        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
+        </property>
+        <property name="MfileName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;rxPAM&quot;">
+        </property>
+        <property name="MfilePath" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;.&quot;">
+        </property>
+        <property name="SaveMatlabWorkspace" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;No&quot;">
+        </property>
+        <property name="MatlabWorkspaceName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;&quot;">
+        </property>
+        <property name="spatial_handling" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;auto&quot;">
+        </property>
+        <property name="default_grid_spacing" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
+        </property>
+        <property name="dx" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
+        </property>
+        <property name="dy" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
+        </property>
+        <property name="default_domain" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
+        </property>
+        <property name="xmin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
+        </property>
+        <property name="xmax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
+        </property>
+        <property name="ymin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
+        </property>
+        <property name="ymax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
+        </property>
+        <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>rxPAM.dta</configure>
+        </property>
+        <property name="_vergilIconFile" class="ptolemy.kernel.util.StringAttribute" value="matcosim.bmp">
+        </property>
+        <property name="noSamples" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="noSamples">
+        </property>
+        <property name="timeStep" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="timeStep">
+        </property>
+        <property name="OSNR" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="OSNR">
+        </property>
+        <property name="bitRate" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="bitRate">
+        </property>
+        <property name="patternLength" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="patternLength">
+        </property>
+        <property name="pointsPerBit" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="pointsPerBit">
+        </property>
+        <property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="M">
+        </property>
+        <property name="runNum" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="runNum">
+        </property>
+        <property name="fiberLength" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="fiberLength">
+        </property>
+        <doc name="modelDesc">Rx a PAM signal</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="480.0, 440.0">
+        </property>
+    </entity>
+    <entity name="lcstep_mmf1" class="linksim.src.stars.LargeCoreStepIndexFiber">
+        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="3">
         </property>
         <property name="peak_index" class="ptolemy.data.expr.Parameter" value="1.49">
         </property>
@@ -595,79 +668,7 @@
             <property name="multiport"/>
         </port>
     </entity>
-    <entity name="rxPAM1" class="rxPAM">
-        <property name="model_instance" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="1">
-        </property>
-        <property name="number_input_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="2">
-        </property>
-        <property name="number_output_ports" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="0">
-        </property>
-        <property name="_vergilRotatePorts" class="ptolemy.data.expr.Parameter" value="0">
-        </property>
-        <property name="_vergilFlipPortsVertical" class="ptolemy.data.expr.Parameter">
-        </property>
-        <property name="_vergilFlipPortsHorizontal" class="ptolemy.data.expr.Parameter">
-        </property>
-        <property name="_vergilShowParamList" class="ptolemy.data.expr.Parameter">
-        </property>
-        <property name="MfileName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;rxPAM&quot;">
-        </property>
-        <property name="MfilePath" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;.&quot;">
-        </property>
-        <property name="SaveMatlabWorkspace" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;No&quot;">
-        </property>
-        <property name="MatlabWorkspaceName" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;&quot;">
-        </property>
-        <property name="spatial_handling" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;auto&quot;">
-        </property>
-        <property name="default_grid_spacing" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
-        </property>
-        <property name="dx" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
-        </property>
-        <property name="dy" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="0.1">
-        </property>
-        <property name="default_domain" class="com.rsoftdesign.simworks.link.PsiStringParameter" value="&quot;yes&quot;">
-        </property>
-        <property name="xmin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
-        </property>
-        <property name="xmax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
-        </property>
-        <property name="ymin" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="-25">
-        </property>
-        <property name="ymax" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="25">
-        </property>
-        <property name="_vergilParameterFile" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-            <configure>rxPAM.dta</configure>
-        </property>
-        <property name="_vergilIconFile" class="ptolemy.kernel.util.StringAttribute" value="matcosim.bmp">
-        </property>
-        <property name="noSamples" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="noSamples">
-        </property>
-        <property name="timeStep" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="timeStep">
-        </property>
-        <property name="OSNR" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="OSNR">
-        </property>
-        <property name="bitRate" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="bitRate">
-        </property>
-        <property name="patternLength" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="patternLength">
-        </property>
-        <property name="pointsPerBit" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="pointsPerBit">
-        </property>
-        <property name="M" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="4">
-        </property>
-        <property name="runNum" class="com.rsoftdesign.simworks.link.PsiIntParameter" value="runNum">
-        </property>
-        <property name="fiberLength" class="com.rsoftdesign.simworks.link.PsiDoubleParameter" value="fiberLength">
-        </property>
-        <doc name="modelDesc">Rx a PAM signal</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="680.0, 440.0">
-        </property>
-    </entity>
     <relation name="link13" class="ptolemy.actor.TypedIORelation">
-        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
-        </property>
-    </relation>
-    <relation name="link5" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
@@ -675,22 +676,26 @@
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
-    <relation name="link8" class="ptolemy.actor.TypedIORelation">
+    <relation name="link11" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
-    <relation name="link11" class="ptolemy.actor.TypedIORelation">
+    <relation name="link2" class="ptolemy.actor.TypedIORelation">
+        <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
+        </property>
+    </relation>
+    <relation name="link3" class="ptolemy.actor.TypedIORelation">
         <property name="connectionType" class="ptolemy.kernel.util.StringAttribute" value="Soft">
         </property>
     </relation>
     <link port="txPAM1.output#1" relation="link13"/>
     <link port="txPAM1.output#1" relation="link6"/>
     <link port="SpDMLaser1.input#1" relation="link13"/>
-    <link port="SpDMLaser1.output#1" relation="link8"/>
-    <link port="SpPhotoDet1.input#1" relation="link5"/>
+    <link port="SpDMLaser1.output#1" relation="link2"/>
+    <link port="SpPhotoDet1.input#1" relation="link3"/>
     <link port="SpPhotoDet1.output" relation="link11"/>
-    <link port="lcstep_mmf1.input#1" relation="link8"/>
-    <link port="lcstep_mmf1.output" relation="link5"/>
     <link port="rxPAM1.input#1" relation="link11"/>
     <link port="rxPAM1.input#2" relation="link6"/>
+    <link port="lcstep_mmf1.input#1" relation="link2"/>
+    <link port="lcstep_mmf1.output" relation="link3"/>
 </entity>
