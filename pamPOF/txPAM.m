@@ -9,6 +9,10 @@ msg = randi([0 M-1],1,nb);
 tx = pammod(msg,M,0,'gray');
 tx = rectpulse(tx,(2^pointsPerBit)*log2(M));
 tx = tx/(2*max(tx))+ 1/2;
+diff = 2^(patternLength+pointsPerBit) - length(tx);
+if diff ~= 0
+	tx = [tx zeros(1,diff)];
+end
 
 noPoints = 2^noSamples;
 OutNode{1}.noSignals = 1;
